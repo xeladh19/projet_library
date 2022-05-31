@@ -18,7 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(rand(5, 10), true),
-            'content' => $this->faker->sentence(5, true),
+            'content' => $this->faker->sentence(15, true),
             'image' => 'https://via.placeholder.com/1000'
         ];
     }
