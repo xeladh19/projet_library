@@ -18,8 +18,8 @@ class Post extends Model
         parent::boot();
 
         self::creating(function ($post) {                           //A la création du post et on va associer ce post a ses parents(category et user )
-            $post->user()->associate(auth()->user()->id);           //On va pouvoir récupérer notre id de l'utilisateur connecté. 
-            $post->category()->associate(request()->category);      //On place la request qu'on va pouvoir récuprer via le helper.
+            // $post->user()->associate(auth()->user()->id);           //On va pouvoir récupérer notre id de l'utilisateur connecté. 
+            // $post->category()->associate(request()->category);      //On place la request qu'on va pouvoir récuprer via le helper.
         });
         self::updating(function ($post) {
             $post->category()->associate(request()->category);
@@ -39,4 +39,8 @@ class Post extends Model
     {                       //A chaque fois que je fais un getTitle attribute je récupère l'attribute
         return Str::title($attribute);                              // Attribute est égal au titre de chaque item qui sera récupéré
     }
+
+
+
+    
 }

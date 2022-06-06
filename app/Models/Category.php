@@ -15,4 +15,8 @@ class Category extends Model
     {
         return $this->hasMany(Post::class); //Il y aura plusieurs posts qui appartiendront à la catégorie ->HasMany  //There will be several posts that will belong to the category ->HasMany
     }
+
+    public function users() {
+        return $this->belongsToMany(User::class, 'users_has_categories', 'category_id', 'user_id')->withTimestamps();
+    }
 }
